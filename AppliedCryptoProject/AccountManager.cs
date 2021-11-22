@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace AppliedCryptoProject
 {
     public static class AccountManager
@@ -30,8 +25,9 @@ namespace AppliedCryptoProject
                     return null;
                 }
 
-
+                return null;
             }
+            return null;
         }
 
         public static Boolean CheckAccountExistance(string userID)
@@ -42,7 +38,7 @@ namespace AppliedCryptoProject
 
         public static Account CreateAccount(string userID)
         {
-
+            return null;
         }
     }
 }

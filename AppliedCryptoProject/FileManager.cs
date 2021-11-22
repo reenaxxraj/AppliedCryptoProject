@@ -33,16 +33,6 @@ namespace AppliedCryptoProject
             //Open File
         }
 
-        public static void EncryptFile()
-        {
-
-        }
-
-        public static void DecryptFile()
-        {
-
-        }
-
         public static byte[]? GetFile(string path)
         {
             if (File.Exists(path))
