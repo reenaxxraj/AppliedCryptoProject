@@ -8,11 +8,9 @@ namespace AppliedCryptoProject
 
         public static void UploadFile(byte[] file, string[] userID)
         {
-            byte[] sharedKey = KeyManager.GenerateSymmetricKey();
 
-            byte[] encryptedFile = EncryptFile(file, sharedKey);
-
-            CloudManager.UploadFile(encryptedFile);
+            // byte[] encryptedSharedKey = KeyManager.GenerateEncryptedSymmetricKey();
+            // byte[] encryptedFile = EncryptFile(file, sharedKey);
 
             //Send Encrypted symmetric key json to cloud
 
@@ -43,5 +41,10 @@ namespace AppliedCryptoProject
                 return null;
             }
         }
+
+        public static void OpenFile(string path){
+
+        }
+
     }
 }
