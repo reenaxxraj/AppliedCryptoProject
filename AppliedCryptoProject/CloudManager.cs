@@ -8,10 +8,9 @@ namespace AppliedCryptoProject
 {
     public class CloudManager
     {
-        IDictionary<string,byte[]> PublicKeyTable;
-        IDictionary<string, byte[]>[] ;
+        IDictionary<string,byte[]> PublicKeyTable = null;
 
-        public IDictionary<string, byte[]> GetPublicKeyTable(string[] userList)
+        public void GetPublicKeyTable(string[] userList)
         {
 
         }
