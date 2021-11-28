@@ -11,8 +11,8 @@ namespace AppliedCryptoProject
 
         public static void InitialiseFolder()
         {
-            downloadsPath = Directory.CreateDirectory(GetDownloadFolderPath() + "\\SecureFileSharingSystem-Downloads-" + AccountManager.userID).FullName;
-            encryptedPath = Directory.CreateDirectory(GetDownloadFolderPath() + "\\SecureFileSharingSystem-EncryptedFiles-" + AccountManager.userID).FullName;
+            downloadsPath = Directory.CreateDirectory(GetDownloadFolderPath() + "\\SecureFileSharing-Downloads-" + AccountManager.userID).FullName;
+            encryptedPath = Directory.CreateDirectory(GetDownloadFolderPath() + "\\SecureFileSharing-EncryptedFiles-" + AccountManager.userID).FullName;
         }
         public static bool UploadFile()
         {
