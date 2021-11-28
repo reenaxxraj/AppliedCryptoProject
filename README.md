@@ -67,7 +67,7 @@ Ideas:
 <!-- Design -->
 ## Design
 
-Security goals of our application:
+### Security goals of our application:
 
 * Confidentiality
 
@@ -82,6 +82,10 @@ Encrypted files uploaded to the cloud are still susceptible to tampering by a ma
 Each user in the system is identified using their UserID 
 
 * Non-repudiation
+
+In order to prevent any users from disputing the modifications they have made to the file, we have used audit logs to keep track of every request made by each user to to the server.
+
+### Functions of our application
 
 ![image](https://user-images.githubusercontent.com/44928185/143735107-3cf993e1-1070-4679-85d8-a82cce644f84.png)
 
