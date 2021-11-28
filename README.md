@@ -102,10 +102,11 @@ In order to prevent any users from disputing the modifications they have made to
 Our system has been split into 2 different applications. A client side app which will be used by th. A server side app which will act as a middle man between the client app and the database.
 
 * Client side application
-Developed using 
 
-Cryptography package used:
-
+Developed as C# .NET Console Application.
+Used cryptography package provided by .NET (System.Security.Cryptography)
+Asymmetric Encryption => RSA-2048
+Symmetric Encryption => AES-256 in CFB (Cipher Feedback) mode + Randomly generated IV
 
 * Server side application
 
@@ -118,17 +119,20 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* Installation of Docker
   ```sh
-  npm install npm@latest -g
+  Install from https://docs.docker.com/desktop/windows/install/
+  ```
+* Visual Studio with .NET Framework
+  ```sh
+  Install from https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/reenaxxraj/CZ4010AppliedCryptoProject.git
    ```
 3. Install NPM packages
    ```sh
