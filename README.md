@@ -43,51 +43,20 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-### Built With
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Motivation -->
 ## Motivation
-Cloud computing is a power tool that has enabled organisations to streamline their IT processeses by
-provide cloud services enable users to store files and applications on remote servers and then access all the data via the Internet focus on ’s core business competence, rather than IT and infrastructure issues. 
-allows business to retain the same applications and business processes without having to deal with the backend technicalities. Cloud computing has numerous benefits to it. 
-Once the data is stored in a Cloud, it is easier to get the back-up and recovery of that, which is otherwise very time taking process on-premise.
-The cloud computing platform helps employees who are located in different geographies to collaborate in a highly convenient and secure manner.
+Cloud services are a power tool that has enabled many organisations to streamline their IT processeses. It enables users to store files and applications on remote servers which allows businesses to retain their applications and business processes without having to deal with the backend technicalities. Cloud computing has numerous benefits to it. It facilitates easy back-up and recovery, which is otherwise costly to be implemented on-premise. It also helps users located in different geographies to collaborate in a  convenient manner.
 
-you will be sharing all your company’s sensitive information to a third-party cloud computing service provider. Clouds are “black boxes” in that the customer cannot directly monitor or manage the resources. The provider owns the physical premises and can deliver the cloud from any suitable location;
-The provider also owns the hardware, software and networks and they are not dedicated to any single customer; Hackers might access this information.
+Nevertheless, these advantages can compromise on the security of the information hosted in the cloud. Sharing the company’s sensitive information to a third-party cloud computing service provider is risky. Clouds are “black boxes” that the organisation cannot directly monitor or manage. The cloud provider owns the physical premises, hardware, software and networks that our information is being hosted in. These resources are not dedicated to any single customer and we do not know who has access to it. Hence, we cannot be certain that the security measures the provider has in place is enough to protect our data.
+
+Therefore, we would like to come up with a solution that allows us to leverage the benefits of a cloud service provider while mitigating the security risks to a certain extent. In this project we will explore how we can develop a secure file sharing system that allows us to share files through an untrusted cloud service provider. 
 
 <!-- Research -->
 ## Research
@@ -98,20 +67,22 @@ Ideas:
 <!-- Design -->
 ## Design
 
-Security Goals Considered:
+Security goals of our application:
 
 * Confidentiality
- ```sh
-A key goal of our application is to keep the contents of each file in the system confidential by allowing only user's with the access rights to read the contents of the file.
-To implement this we will use a shared symmetric key for each file. This key will be only be shared with the users who are given access rights by the owner of the file. 
-```
+
+A key goal of our application is to keep the contents of each file in the system confidential by only allowing users with the appropriate access rights to read the contents of the file. To implement this we will use a shared symmetric key to encrypt each file. This key will be only be shared with the users who are given read rights by the owner of the file. This shared key will be encrypted using the public key of users that have been given read access rights and stored in the database. Both the encrypted shared key and encrypted file will be stored in the database. This allows users to retrieve the encrypted file and encrypted shared key from the server at their own convenience and read the contents of the file.
 
 * Integrity
-Encrypted files uploaded to the cloud are still susceptible to tampering by a malicious. Therefore, we will have to ensure that client is aware when the file has been modified by someone other than the owner of the file (Only owner is given permission to modify the file). Each
+
+Encrypted files uploaded to the cloud are still susceptible to tampering by a malicious. Therefore, we will have to ensure that client is aware when the file has been modified by someone else other than the owner of the file (Only owner is given permission to modify the file). Each 
 
 * Authentication
 
+Each user in the system is identified using their UserID 
+
 * Non-repudiation
+
 
 <!-- Development -->
 ## Development
