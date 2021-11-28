@@ -7,19 +7,11 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Secure File Sharing System</h3>
 
   <p align="center">
     project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
@@ -77,7 +69,61 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Motivation -->
+## Motivation
+Cloud computing is a power tool that has enabled organisations to streamline their IT processeses by
+provide cloud services enable users to store files and applications on remote servers and then access all the data via the Internet focus on ’s core business competence, rather than IT and infrastructure issues. 
+allows business to retain the same applications and business processes without having to deal with the backend technicalities. Cloud computing has numerous benefits to it. 
+Once the data is stored in a Cloud, it is easier to get the back-up and recovery of that, which is otherwise very time taking process on-premise.
+The cloud computing platform helps employees who are located in different geographies to collaborate in a highly convenient and secure manner.
+
+you will be sharing all your company’s sensitive information to a third-party cloud computing service provider. Clouds are “black boxes” in that the customer cannot directly monitor or manage the resources. The provider owns the physical premises and can deliver the cloud from any suitable location;
+The provider also owns the hardware, software and networks and they are not dedicated to any single customer; Hackers might access this information.
+
+<!-- Research -->
+## Research
+Common attacks:
+
+Ideas:
+
+<!-- Design -->
+## Design
+
+Security Goals Considered:
+
+* Confidentiality
+ ```sh
+A key goal of our application is to keep the contents of each file in the system confidential by allowing only user's with the access rights to read the contents of the file.
+To implement this we will use a shared symmetric key for each file. This key will be only be shared with the users who are given access rights by the owner of the file. 
+```
+
+* Integrity
+Encrypted files uploaded to the cloud are still susceptible to tampering by a malicious. Therefore, we will have to ensure that client is aware when the file has been modified by someone other than the owner of the file (Only owner is given permission to modify the file). Each
+
+* Authentication
+
+* Non-repudiation
+
+<!-- Development -->
+## Development
+Our system has been split into 2 different applications. A client side app which will be used by th. A server side app which will act as a middle man between the client app and the database.
+
+* Client side application
+Developed using 
+
+Cryptography package used:
+
+
+* Server side application
 
 <!-- GETTING STARTED -->
 ## Getting Started
