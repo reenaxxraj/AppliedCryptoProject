@@ -29,10 +29,11 @@ namespace AppliedCryptoProject
 
             FileStream inputFileStream = new FileStream(inputFilePath, FileMode.Open);
 
-            int startFileName = inputFilePath.LastIndexOf("\\") + 1;
-            string outputFile = encryptedPath + "\\" + inputFilePath.Substring(startFileName, inputFilePath.LastIndexOf(".") - startFileName) + ".enc";
+            string inputFileNameWithExt = Path.GetFileName(inputFilePath);
+            string inputFileNameWithoutExt = Path.GetFileName(inputFilePath);
+            string outputFile = encryptedPath + "\\" + inputFileNameWithoutExt + ".enc";
             FileStream outputFileStream = new FileStream(outputFile, FileMode.Create);
-            byte[] encryptedSymmetricKey = KeyManager.EncryptFile(inputFileStream, outputFileStream, inputFilePath.Substring(startFileName, inputFilePath.Length-startFileName));
+            byte[] encryptedSymmetricKey = KeyManager.EncryptFile(inputFileStream, outputFileStream, inputFileNameWithExt);
 
             if (encryptedSymmetricKey == null) 
                 return false;
@@ -212,12 +213,12 @@ namespace AppliedCryptoProject
                 return false;
 
             }
-
-            int startFileName = inputFilePath.LastIndexOf("\\") + 1;
-            string outputFile = encryptedPath + "\\" + inputFilePath.Substring(startFileName, inputFilePath.LastIndexOf(".") - startFileName) + ".enc";
+            string inputFileNameWithExt = Path.GetFileName(inputFilePath);
+            string inputFileNameWithoutExt = Path.GetFileName(inputFilePath);
+            string outputFile = encryptedPath + "\\" + inputFileNameWithoutExt + ".enc";
             FileStream outputFileStream = new FileStream(outputFile, FileMode.Create);
 
-            if (KeyManager.ReEncryptFile(inputFileStream, outputFileStream, inputFilePath.Substring(startFileName, inputFilePath.Length - startFileName), encryptedSymmetricKey) == null)
+            if (KeyManager.ReEncryptFile(inputFileStream, outputFileStream, inputFileNameWithExt, encryptedSymmetricKey) == null)
                 return false;
 
             byte[] encryptedFile = File.ReadAllBytes(outputFile);

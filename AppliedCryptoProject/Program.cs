@@ -20,6 +20,7 @@ while (true)
                     FileManager.InitialiseFolder();
                     Console.WriteLine("[INFO]: Login Successful");
                     Console.WriteLine("[INFO]: Logged in as "+ AccountManager.userID);
+
                 }
                 else
                     Console.WriteLine("[ERROR]: Login Attempt Failed");
@@ -45,10 +46,20 @@ while (true)
                 break;
         }
     }
+    Console.ForegroundColor = ConsoleColor.Green;
 
+    Console.WriteLine("\nCommand List:");
+    Console.WriteLine("upload\t\tFunction to upload a file to database\n" +
+                      "download\tFunction to download a file from database\n" +
+                      "modify\t\tFunction to update a file in database\n" +
+                      "userexist\tFunction to check if a user ID already exists\n" +
+                      "sharefile\tFunction to share an existing file to other users\n" +
+                      "unsharefile\tFunction to revoke access rights of a user\n" +
+                      "deletefile\tFunction to delete file from database\n" +
+                      "getlog\t\tFunction to retrieve audit logs\n" +
+                      "logout\t\tFunction to logout of current account\n");
     while (loggedIn)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(">");
         string cmd = Console.ReadLine();
         switch (cmd.ToLower())
@@ -127,7 +138,7 @@ while (true)
                                   "unsharefile\tFunction to revoke access rights of a user\n" +
                                   "deletefile\tFunction to delete file from database\n" +
                                   "getlog\t\tFunction to retrieve audit logs\n" +
-                                  "loggout\t\tFunction to logout of current account\n");
+                                  "logout\t\tFunction to logout of current account\n");
                 break;
         }
     }
