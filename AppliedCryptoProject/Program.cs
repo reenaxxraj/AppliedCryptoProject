@@ -74,7 +74,7 @@ while (true)
                     Console.WriteLine("[ERROR]: File update failed.");
                 break;
 
-            case ("exist"):
+            case ("userexist"):
                 Console.Write("User ID: ");
                 string inp = Console.ReadLine();
                 Console.Write(inp);
@@ -91,7 +91,7 @@ while (true)
                     Console.WriteLine("[ERROR] Share file unsuccessful");
                 break;
 
-            case ("delete"):
+            case ("deletefile"):
                 if (FileManager.DeleteFile())
                     Console.WriteLine("[INFO] Delete file successful");
                 else
@@ -105,7 +105,7 @@ while (true)
                     Console.WriteLine("[ERROR] Unshare file unsuccessful");
                 break;
 
-            case ("getlogs"):
+            case ("getlog"):
                 if (FileManager.AuditLog() == false)
                     Console.WriteLine("[Error]: Unable to get logs. Try again later");
                 break;
@@ -118,10 +118,18 @@ while (true)
 
             default:
                 Console.WriteLine("[ERROR]: Invalid input");
+                Console.WriteLine("\nCommand List:");
+                Console.WriteLine("upload\t\tFunction to upload a file to database\n" +
+                                  "download\tFunction to download a file from database\n" +
+                                  "modify\t\tFunction to update a file in database\n" +
+                                  "userexist\tFunction to check if a user ID already exists\n" +
+                                  "sharefile\tFunction to share an existing file to other users\n" +
+                                  "unsharefile\tFunction to revoke access rights of a user\n" +
+                                  "deletefile\tFunction to delete file from database\n" +
+                                  "getlog\t\tFunction to retrieve audit logs\n" +
+                                  "loggout\t\tFunction to logout of current account\n");
                 break;
         }
     }
-
-
-
 }
+Console.ResetColor();

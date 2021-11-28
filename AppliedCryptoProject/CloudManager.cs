@@ -49,7 +49,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response.ReasonPhrase);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
         }
@@ -73,10 +73,15 @@ namespace AppliedCryptoProject
                     return (Convert.FromBase64String(resp.Modulus), Convert.FromBase64String(resp.Exponent));
                 }
                 else
+                {
+                    Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                     return (null, null);
+                }
+                
             }
             catch (Exception ex)
             {
+                //Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return (null, null);
             }
         }
@@ -108,7 +113,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 
@@ -140,7 +145,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return (null, null);
             }
 
