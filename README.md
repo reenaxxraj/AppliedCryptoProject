@@ -85,6 +85,8 @@ Each user in the system is identified using their UserID
 
 ![image](https://user-images.githubusercontent.com/44928185/143735107-3cf993e1-1070-4679-85d8-a82cce644f84.png)
 
+![image](https://user-images.githubusercontent.com/44928185/143735244-8dbb947d-fd9e-428d-8e17-60b22c89b8f7.png)
+
 
 
 <!-- Development -->
