@@ -174,7 +174,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 
@@ -200,7 +200,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 
@@ -225,7 +225,7 @@ namespace AppliedCryptoProject
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 
@@ -246,14 +246,13 @@ namespace AppliedCryptoProject
 
             if (response.IsSuccessStatusCode)
             {
-                //Console.WriteLine(response);
                 Console.WriteLine("[INFO]: File url: " + url + "updated in database");
                 return true;
                 
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 
@@ -287,12 +286,15 @@ namespace AppliedCryptoProject
                     string[] logPrint = { log.url, log.caller, log.type, log.timestamp.ToString()};
                     table.AddRow(logPrint);
                 }
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 table.Write(Format.Default);
+                Console.ResetColor();
                 return true;
             }
             else
             {
-                //Console.WriteLine(response);
+                Console.WriteLine("[ERROR]: Response from server: " + response.ReasonPhrase);
                 return false;
             }
 

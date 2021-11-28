@@ -17,7 +17,7 @@ while (true)
                 if (AccountManager.Login())
                 {
                     loggedIn = true;
-                    FileManager.FileManager();
+                    FileManager.InitialiseFolder();
                     Console.WriteLine("[INFO]: Login Successful");
                     Console.WriteLine("[INFO]: Logged in as "+ AccountManager.userID);
                 }
@@ -29,7 +29,7 @@ while (true)
                 if (AccountManager.CreateAccount())
                 {
                     loggedIn = true;
-                    FileManager.FileManager();
+                    FileManager.InitialiseFolder();
                     Console.WriteLine("[INFO]: Account Created Successfully");
                     Console.WriteLine("[INFO]: Logged in as " + AccountManager.userID);
 
@@ -85,15 +85,24 @@ while (true)
                 break;
 
             case ("sharefile"):
-                FileManager.Sharefile();
+                if(FileManager.Sharefile())
+                    Console.WriteLine("[INFO] Share file successful");
+                else
+                    Console.WriteLine("[ERROR] Share file unsuccessful");
                 break;
 
             case ("delete"):
-                FileManager.DeleteFile();
+                if (FileManager.DeleteFile())
+                    Console.WriteLine("[INFO] Delete file successful");
+                else
+                    Console.WriteLine("[ERROR] Delete file unsuccessful");
                 break;
 
             case ("unsharefile"):
-                FileManager.UnshareFile();
+                if (FileManager.UnshareFile())
+                    Console.WriteLine("[INFO] Unshare file successful");
+                else
+                    Console.WriteLine("[ERROR] Unshare file unsuccessful");
                 break;
 
             case ("getlogs"):

@@ -87,7 +87,7 @@ namespace AppliedCryptoProject
             }
         }
 
-        public static void Sharefile()
+        public static bool Sharefile()
         {
             Console.Write("Enter file url:");
             string fileurl = Console.ReadLine();
@@ -101,7 +101,7 @@ namespace AppliedCryptoProject
             if (fileResponse == (null, null))
             {
                 Console.WriteLine("[ERROR]: File does not exist");
-                return;
+                return false;
             }
             byte[] encryptedKey = Convert.FromBase64String(fileResponse.Item2);
 
@@ -127,16 +127,16 @@ namespace AppliedCryptoProject
             }
 
             UsernameKeyPair[] usernamekeypair = KeyManager.GenerateEncryptedSymmetricKey(encryptedKey, publickeytable);
-            CloudManager.ShareFile(fileurl,usernamekeypair,AccountManager.userID);
+            return CloudManager.ShareFile(fileurl,usernamekeypair,AccountManager.userID);
 
         }
 
-        public static void DeleteFile()
+        public static bool DeleteFile()
         {
             Console.Write("Enter file name: ");
             string input = Console.ReadLine();
 
-            CloudManager.DeleteFile(input);
+            return CloudManager.DeleteFile(input);
         }
 
         public static bool UnshareFile()
