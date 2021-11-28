@@ -87,11 +87,12 @@ In order to prevent any users from disputing the modifications they have made to
 
 ### Functions of our application
 
-![image](https://user-images.githubusercontent.com/44928185/143735107-3cf993e1-1070-4679-85d8-a82cce644f84.png)
+![image](https://user-images.githubusercontent.com/44928185/143735599-de2cc681-2f4d-4765-aa6d-7a2047502910.png)
 
-![image](https://user-images.githubusercontent.com/44928185/143735244-8dbb947d-fd9e-428d-8e17-60b22c89b8f7.png)
+![image](https://user-images.githubusercontent.com/44928185/143735618-108b80b9-f558-42de-a17d-1fb0db196e71.png)
 
-![image](https://user-images.githubusercontent.com/44928185/143735555-ba707547-b5d3-45be-b132-51f4bd7b949b.png)
+![image](https://user-images.githubusercontent.com/44928185/143735584-9f255259-6033-4b8d-9d86-816b13b81bea.png)
+
 
 
 
