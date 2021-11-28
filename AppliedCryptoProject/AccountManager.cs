@@ -27,8 +27,8 @@ namespace AppliedCryptoProject
             }
             else
             {
-                Console.Write("Account does not exist. Try again");
-                    return false;
+                Console.WriteLine("[ERROR]: Account does not exist. Try again");
+                return false;
             }
 
             
@@ -44,7 +44,7 @@ namespace AppliedCryptoProject
         public static bool CreateAccount()
         {
 
-            Console.WriteLine("Enter User ID: ");
+            Console.Write("Enter User ID: ");
             string input = Console.ReadLine();
             (byte[], byte[]) publicKey = RetrieveAccountDetails(input);
 
@@ -64,7 +64,6 @@ namespace AppliedCryptoProject
             {
                 if (CloudManager.CreateIdentity(input, publicKey))
                     return KeyManager.StoreRSAKeyPair();
-                    //return true;
                 else
                     return false;
             }

@@ -1,7 +1,7 @@
 ﻿using AppliedCryptoProject;
 
 
-Console.WriteLine("****Secure File Sharing Application****");
+Console.WriteLine("\n****Secure File Sharing System****");
 
 while (true)
 {
@@ -17,7 +17,9 @@ while (true)
                 if (AccountManager.Login())
                 {
                     loggedIn = true;
+                    FileManager.FileManager();
                     Console.WriteLine("[INFO]: Login Successful");
+                    Console.WriteLine("[INFO]: Logged in as "+ AccountManager.userID);
                 }
                 else
                     Console.WriteLine("[ERROR]: Login Attempt Failed");
@@ -27,7 +29,10 @@ while (true)
                 if (AccountManager.CreateAccount())
                 {
                     loggedIn = true;
+                    FileManager.FileManager();
                     Console.WriteLine("[INFO]: Account Created Successfully");
+                    Console.WriteLine("[INFO]: Logged in as " + AccountManager.userID);
+
                 }
                 else
                 {
@@ -43,19 +48,30 @@ while (true)
 
     while (loggedIn)
     {
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(">");
         string cmd = Console.ReadLine();
         switch (cmd.ToLower())
         {
             case ("upload"):
-                FileManager.UploadFile();
+                if (FileManager.UploadFile())
+                    Console.WriteLine("[INFO]: Upload file successful");
+                else
+                    Console.WriteLine("[ERROR]: Upload file failed.");
                 break;
 
             case ("download"):
-                FileManager.DownloadFile();
+                if (FileManager.DownloadFile())
+                    Console.WriteLine("[INFO]: Download file successful");
+                else
+                    Console.WriteLine("[ERROR]: Download file failed.");
                 break;
 
             case ("modify"):
+                if (FileManager.ModifyFile())
+                    Console.WriteLine("[INFO]: File update successful");
+                else
+                    Console.WriteLine("[ERROR]: File update failed.");
                 break;
 
             case ("exist"):
@@ -63,26 +79,36 @@ while (true)
                 string inp = Console.ReadLine();
                 Console.Write(inp);
                 if (CloudManager.GetIdentity(inp) != (null, null))
-                    Console.WriteLine("User exists");
+                    Console.WriteLine("[INFO] User (" + inp + ") exists");
                 else
-                    Console.WriteLine("User does not exist");
+                    Console.WriteLine("[INFO] User (" + inp + ") does not exist");
                 break;
-            case ("share file"):
+
+            case ("sharefile"):
                 FileManager.Sharefile();
                 break;
+
             case ("delete"):
                 FileManager.DeleteFile();
                 break;
-            case ("privatekey"):
-                Console.WriteLine(Convert.ToBase64String(KeyManager.RSAalg.ExportParameters(true).P));
+
+            case ("unsharefile"):
+                FileManager.UnshareFile();
                 break;
 
-            case ("unshare file"):
-                FileManager.UnshareFile();
+            case ("getlogs"):
+                if (FileManager.AuditLog() == false)
+                    Console.WriteLine("[Error]: Unable to get logs. Try again later");
                 break;
 
             case ("logout"):
                 loggedIn = false;
+                Console.ResetColor();
+                Console.WriteLine("[INFO]: Logged out of " + AccountManager.userID);
+                break;
+
+            default:
+                Console.WriteLine("[ERROR]: Invalid input");
                 break;
         }
     }
